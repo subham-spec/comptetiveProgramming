@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include "addEdge.cpp"
 using namespace std;
 void BFS(vector<int> adj[], int s){
     set<int> st;
@@ -18,20 +19,16 @@ void BFS(vector<int> adj[], int s){
         }
     }
 }
-void addEdge(vector<int> adj[], int i, int j){
-    adj[i].push_back(j);
-    adj[j].push_back(i);
-}
 int main(){
     int s = 6;
     vector<int> adj[s];
-    addEdge(adj, 0, 1);
-    addEdge(adj, 0, 2);
-    addEdge(adj, 0, 5);
-    addEdge(adj, 1, 3);
-    addEdge(adj, 3, 5);
-    addEdge(adj, 2, 4);
-    addEdge(adj, 4, 5);
+    add(adj, 0, 1);
+    add(adj, 0, 2);
+    add(adj, 0, 5);
+    add(adj, 1, 3);
+    add(adj, 3, 5);
+    add(adj, 2, 4);
+    add(adj, 4, 5);
 
     BFS(adj, 0);
 
